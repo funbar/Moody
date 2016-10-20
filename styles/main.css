@@ -26,7 +26,6 @@ body{
 #header a{
     color: white;
     margin-right: 10px;
-    font-weight: 300;
 }
 
 .header-logo{
@@ -42,6 +41,7 @@ body{
     padding: 20px 15px 40px 15px;
     margin-bottom: 26.5px;
     background-color: #FFF;
+    width: 100%;
 }
 
 .page-title{
