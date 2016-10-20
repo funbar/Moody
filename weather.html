@@ -6,12 +6,12 @@
         <link rel="stylesheet" href="../node_modules/frow/css/frow.min.css">
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/weather.css">        
+        
     </head>
     <body>
       <div id="header" class="card-shadow">
             <div class="frow-container height-100">
                 <div class="frow justify-between centered">
-                    
                     <a href="./index.html" class="header-logo">
                         Moody
                     </a>
@@ -25,12 +25,10 @@
                         <a href="weather.html">
                             Weather
                         </a>
-                        
                     </div>
                 </div>
             </div>
         </div>
-        
         <div id="under-header">
             <div class="frow-container">
                 <div class="frow">
@@ -40,5 +38,37 @@
                 </div>
             </div>
         </div>
+        
+        
+<script type="text/javascript">
+
+function loadXMLDoc() {
+    var xmlhttp = new XMLHttpRequest();
+    var weather = '//api.wunderground.com/api/06374893a86b9e3f/conditions/q/CA/San_Francisco.json';
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+           if (xmlhttp.status == 200) {
+            //   document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+            console.log(xmlhttp.responseText);
+           }
+           else if (xmlhttp.status == 400) {
+              alert('There was an error 400');
+           }
+           else {
+               alert('something else other than 200 was returned');
+           }
+        }
+    };
+
+    xmlhttp.open("GET", weather, true);
+    xmlhttp.send();
+}
+
+loadXMLDoc();
+// get data:
+
+</script>
+
     </body>
 </html>
