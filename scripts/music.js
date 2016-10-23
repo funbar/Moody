@@ -27,6 +27,10 @@ function ajaxCall(request, cb) {
              //var test = JSON.parse(xmlhttp.response);
              //var detailedResults = test.query.results;
              //console.log("test city" + detailedResults);
+             if(result.playlists.items.length == 0)
+             {
+                 createPlaylist(true);
+             }
              cb(result);
 
            }
@@ -48,14 +52,20 @@ function ajaxCall(request, cb) {
     //var userZipcode = document.getElementById('zipcode').value;
   //  console.log(userZipcode);
     // https://api.spotify.com/v1/search?q="kendrick lamar"&type=playlist"
-    weather = 'day';
+    //weather = 'day';
     var customUrl = mood + '%20' + weather;
     //customUrl = 'happy%20clear';
     //console.log('test' + customUrl);
   
-    function createPlaylist(){
+    function createPlaylist(repeat){
   
+        if(repeat){
+        var musicUrl = '//api.spotify.com/v1/search?q="' + mood + '"&type=playlist';
+            
+        }
+        else{
         var musicUrl = '//api.spotify.com/v1/search?q="' + customUrl + '"&type=playlist';
+        }
         console.log(musicUrl);
         ajaxCall(musicUrl, function(result)
         {

@@ -2,6 +2,7 @@
 var weather = '';
 var actualWeather = '';
 var conditionFinal = '';
+var weatherFinal = '';
 
 function getParameterByName(name, url) {
     if (!url) {
@@ -73,7 +74,8 @@ function grabZip(){
         ajaxCall(tempUrl, function(finalResult){
         actualWeather = finalResult;
         console.log(actualWeather.current_observation.temp_f);
-        var weatherFinal = actualWeather.current_observation.temp_f;
+        weatherFinal = actualWeather.current_observation.temp_f;
+        
         conditionFinal = actualWeather.current_observation.weather;
         insertContent('apiTemp', weatherFinal);
         insertContent('apiCond', conditionFinal);
@@ -87,7 +89,17 @@ function grabZip(){
 
 
 function zipSubmitted() {
-    window.location = './music.html?mood=' + mood + '&weather=' + conditionFinal;
+    var feelsLike = '';
+    
+    if(weatherFinal < 50)
+    {
+        feelsLike = 'chill';
+    }
+    else
+    {
+        feelsLike = 'hot';
+    }
+    window.location = './music.html?mood=' + mood + '&weather=' + feelsLike;
     
 }
 
