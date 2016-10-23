@@ -70,7 +70,7 @@ function grabZip(){
         
         var tempUrl = '//api.wunderground.com/api/06374893a86b9e3f/conditions/q/' + state + '/' + city +'.json';
 
-        console.log(weather);
+        //console.log(weather);
         ajaxCall(tempUrl, function(finalResult){
         actualWeather = finalResult;
         console.log(actualWeather.current_observation.temp_f);
