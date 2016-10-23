@@ -3,7 +3,7 @@
     <head>
         <title> </title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.rawgit.com/Beg-in/frow/1.1.1/css/frow.min.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/Beg-in/frow/1.2.0/css/frow.min.css">
 
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/weather.css">        
@@ -34,42 +34,14 @@
             <div class="frow-container">
                 <div class="frow">
                         <div class="page card-shadow">
-                            Hello
+                              
+                              Zipcode: <input type="text" name="zipcode" id="zipcode" />
+                              <button onclick="grabZip()">Submit</button> 
                         </div>
                 </div>
             </div>
         </div>
         
-        
-<script type="text/javascript">
-
-function loadXMLDoc() {
-    var xmlhttp = new XMLHttpRequest();
-    var weather = '//api.wunderground.com/api/06374893a86b9e3f/conditions/q/CA/San_Francisco.json';
-
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-           if (xmlhttp.status == 200) {
-            //   document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
-            console.log(xmlhttp.responseText);
-           }
-           else if (xmlhttp.status == 400) {
-              alert('There was an error 400');
-           }
-           else {
-               alert('something else other than 200 was returned');
-           }
-        }
-    };
-
-    xmlhttp.open("GET", weather, true);
-    xmlhttp.send();
-}
-
-loadXMLDoc();
-// get data:
-
-</script>
-
     </body>
+    <script src="./scripts/weather.js"></script>   
 </html>
