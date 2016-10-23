@@ -1,6 +1,21 @@
 // JavaScript File
 var weather = '';
 var actualWeather = '';
+var conditionFinal = '';
+
+function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+var mood = getParameterByName('mood');
+
 
 function removeHidden()
 {
@@ -59,24 +74,20 @@ function grabZip(){
         actualWeather = finalResult;
         console.log(actualWeather.current_observation.temp_f);
         var weatherFinal = actualWeather.current_observation.temp_f;
-        var conditionFinal = actualWeather.current_observation.weather;
+        conditionFinal = actualWeather.current_observation.weather;
         insertContent('apiTemp', weatherFinal);
         insertContent('apiCond', conditionFinal);
             
         });
-        // console.log(weather.location.state); 
-        // console.log(weather.location.city);
-        // //console.log(weather);
-        // console.log(weather.geolookup.country);
-//        insertContent('apiTemp', weather.temperature);
         removeHidden();
         //console.log('hello');
     });
   //  setTimeout(function() { console.log('weatherrrr' +weather); }, 3000);
 }
 
-//console.log(weather);
-//var zipcode = document.getElementById('zipcode');
-//console.log('hello ' + document.getElementById('zipcode').value);
-//console.log(document);
-// get data:
+
+function zipSubmitted() {
+    window.location = './music.html?mood=' + mood + '&weather=' + conditionFinal;
+    
+}
+

@@ -2,6 +2,20 @@
 // JavaScript File
 var music = '';
 
+function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+var mood = getParameterByName('mood'); 
+var weather = getParameterByName('weather'); 
+
 function ajaxCall(request, cb) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -24,7 +38,6 @@ function ajaxCall(request, cb) {
            }
         }
     };
-
     xmlhttp.open('GET', request, true);
     xmlhttp.send();
 //return result;
@@ -35,42 +48,42 @@ function ajaxCall(request, cb) {
     //var userZipcode = document.getElementById('zipcode').value;
   //  console.log(userZipcode);
     // https://api.spotify.com/v1/search?q="kendrick lamar"&type=playlist"
+    weather = 'day';
+    var customUrl = mood + '%20' + weather;
+    //customUrl = 'happy%20clear';
+    //console.log('test' + customUrl);
+  
     function createPlaylist(){
-    var musicUrl = '//api.spotify.com/v1/search?q="Gambino"&type=playlist';
-    ajaxCall(musicUrl, function(result)
-    {
-        music = result;
-        let uri = music.playlists.items[0].uri;
-        console.log(music.playlists.items[0].uri);
-        
-        
-        var ifrm = document.createElement('iframe');
-      //  ifrm.setAttribute('id', 'ifrm'); // assign an id
-        
-        //document.body.appendChild(ifrm); // to place at end of document
-        
-        // to place before another page element
-        //var el = document.getElementById('marker');
-       // el.parentNode.insertBefore(ifrm, el);
-        
-        var frameUrl = '//embed.spotify.com/?uri=' + uri;
-        // assign url
-        ifrm.setAttribute('src', frameUrl);
-        ifrm.setAttribute('width', '100%');
-        ifrm.setAttribute('height', 400);
-        ifrm.setAttribute('frameborder', 0);
-        ifrm.setAttribute('allowtransparency', true);
-        ifrm.setAttribute('class', 'card-shadow')
-        
-        document.getElementById("show-playlist").appendChild(ifrm);
-        console.log('hello');
-    });
+  
+        var musicUrl = '//api.spotify.com/v1/search?q="' + customUrl + '"&type=playlist';
+        console.log(musicUrl);
+        ajaxCall(musicUrl, function(result)
+        {
+            music = result;
+            console.log(music);
+            var uri = music.playlists.items[0].uri;
+            console.log(music.playlists.items[0].uri);
+            
+            
+            var ifrm = document.createElement('iframe');
     
+            var frameUrl = '//embed.spotify.com/?uri=' + uri;
+            // assign url
+            ifrm.setAttribute('src', frameUrl);
+            ifrm.setAttribute('width', '100%');
+            ifrm.setAttribute('height', 400);
+            ifrm.setAttribute('frameborder', 0);
+            ifrm.setAttribute('allowtransparency', true);
+            ifrm.setAttribute('class', 'card-shadow')
+            // seems to generate get error
+            document.getElementById("show-playlist").appendChild(ifrm);
+            console.log('hello');
+        });
+        
     }
-    setTimeout(function() { console.log("music test" + music ); }, 3000);
-//}
+ 
 createPlaylist();
-console.log(music);
+//console.log(music);
 //var zipcode = document.getElementById("zipcode");
 //console.log('hello ' + document.getElementById('zipcode').value);
 //console.log(document);
