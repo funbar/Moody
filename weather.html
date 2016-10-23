@@ -20,7 +20,7 @@
                         <a href="aboutme.html">
                             About Me
                         </a>
-                        <a href="#">
+                        <a href="music.html">
                             Music
                         </a>
                         <a href="weather.html">
@@ -39,6 +39,42 @@
                               <button onclick="grabZip()">Submit</button> 
                         </div>
                 </div>
+                
+                
+                <div id="weather-choices" class="hidden">
+                    <div class="frow gutters">
+                        <div class="col-md-1-2">
+                            <div class="weather-choice card-shadow">
+                                <div class="frow centered-column">  
+                                    <span><span id="apiTemp"> 
+                                     </span>&deg;F</span> 
+                                     Temperature
+                                    <!--<span>-->
+                                    <!--    "Today is a great day!"-->
+                                    <!--</span>-->
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="col-md-1-2">
+                            <div class="weather-choice card-shadow">
+                                <div class="frow centered-column">
+                                    <span id="apiCond">
+                                    </span>
+                                    Conditions
+                                    <!--<span>-->
+                                    <!--    "Today is a great day!"-->
+                                    <!--</span>-->
+                                </div>
+                            </div> 
+                        </div>
+                        <div class="frow">
+                            <button class="next-page">
+                                Let's get some Music!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
         

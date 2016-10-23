@@ -1,3 +1,7 @@
+.hidden{
+    display: none;
+}
+
 body{
     font-family: Roboto;
     background-color: #F0F0F0;
