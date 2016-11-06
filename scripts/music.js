@@ -23,7 +23,7 @@ function ajaxCall(request, cb) {
            if (xmlhttp.status == 200) {
                
              var result = JSON.parse(xmlhttp.responseText);
-             //console.log(result);
+             console.log(result);
              //var test = JSON.parse(xmlhttp.response);
              //var detailedResults = test.query.results;
              //console.log("test city" + detailedResults);
@@ -70,7 +70,7 @@ function ajaxCall(request, cb) {
         ajaxCall(musicUrl, function(result)
         {
             music = result;
-            //console.log(music);
+            console.log(music);
             var uri = music.playlists.items[0].uri;
             console.log(music.playlists.items[0].uri);
             
@@ -87,7 +87,7 @@ function ajaxCall(request, cb) {
             ifrm.setAttribute('class', 'card-shadow')
             // seems to generate get error
             document.getElementById("show-playlist").appendChild(ifrm);
-            //console.log('hello');
+            console.log('hello');
         });
         
     }
