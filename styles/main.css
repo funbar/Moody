@@ -4,14 +4,27 @@
 
 body{
     font-family: Roboto;
-    background-color: #F0F0F0;
+    /*background-color: #F0F0F0;*/
     
+      
+    background-color: #7474BF;
+    background-image: linear-gradient(to bottom, #7474BF, #348AC7 100%);
+    background-attachment: fixed;
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    padding: 0;
+    margin: 0;    
 }
 
 .section-title{
     font-style: italic;
     font-size: 30px;
-    color: #666;
+    color: #ffffff;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -34,6 +47,14 @@ body{
 .header-logo{
     font-size: 22px;
     font-weight: 900;
+}
+
+canvas{
+    background-color: #FFFFFF;
+    background: #FFFFFF;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+    
 }
 
 #under-header{
