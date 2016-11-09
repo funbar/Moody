@@ -69,10 +69,13 @@ function ajaxCall(request, cb) {
         console.log(musicUrl);
         ajaxCall(musicUrl, function(result)
         {
+	    
             music = result;
+	    var rand = Math.floor((Math.random() * music.playlists.items.length) + 1);
+	    
             console.log(music);
-            var uri = music.playlists.items[0].uri;
-            console.log(music.playlists.items[0].uri);
+            var uri = music.playlists.items[rand].uri;
+            console.log(music.playlists.items[rand].uri);
             
             
             var ifrm = document.createElement('iframe');
