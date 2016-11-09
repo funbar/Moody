@@ -66,13 +66,17 @@ function ajaxCall(request, cb) {
         else{
         var musicUrl = '//api.spotify.com/v1/search?q="' + customUrl + '"&type=playlist';
         }
-        console.log(musicUrl);
+//        console.log(musicUrl);
         ajaxCall(musicUrl, function(result)
         {
+
             music = result;
-            console.log(music);
-            var uri = music.playlists.items[0].uri;
-            console.log(music.playlists.items[0].uri);
+            var rand = Math.floor((Math.random() * music.playlists.items.length) + 1);
+
+//            console.log(music);
+//            console.log(music.playlists.items.length);
+            var uri = music.playlists.items[rand].uri;
+//            console.log(music.playlists.items[rand].uri);
             
             
             var ifrm = document.createElement('iframe');
