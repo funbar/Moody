@@ -1,5 +1,3 @@
-// JavaScript File
-// JavaScript File
 var music = '';
 
 function getParameterByName(name, url) {
@@ -15,6 +13,8 @@ function getParameterByName(name, url) {
 }
 var mood = getParameterByName('mood'); 
 var weather = getParameterByName('weather'); 
+var length;
+var rand;
 
 function ajaxCall(request, cb) {
     var xmlhttp = new XMLHttpRequest();
@@ -24,10 +24,8 @@ function ajaxCall(request, cb) {
                
              var result = JSON.parse(xmlhttp.responseText);
              console.log(result);
-             //var test = JSON.parse(xmlhttp.response);
-             //var detailedResults = test.query.results;
-             //console.log("test city" + detailedResults);
-             if(result.playlists.items.length == 0)
+             length = result.playlists.items.length;
+             if(length == 0)
              {
                  createPlaylist(true);
              }
@@ -54,31 +52,29 @@ function ajaxCall(request, cb) {
     // https://api.spotify.com/v1/search?q="kendrick lamar"&type=playlist"
     //weather = 'day';
     var customUrl = mood + '%20' + weather;
-    //customUrl = 'happy%20clear';
-    //console.log('test' + customUrl);
-  
+
     function createPlaylist(repeat){
   
-        if(repeat){
+        if(repeat || length == 0){
         var musicUrl = '//api.spotify.com/v1/search?q="' + mood + '"&type=playlist';
             
         }
-        else{
+        else if(length == 0){
         var musicUrl = '//api.spotify.com/v1/search?q="' + customUrl + '"&type=playlist';
         }
-//        console.log(musicUrl);
+
         ajaxCall(musicUrl, function(result)
         {
 
             music = result;
-            var rand = Math.floor((Math.random() * music.playlists.items.length) + 1);
-
+            rand = Math.floor((Math.random() * music.playlists.items.length - 1) + 0);
+            if(rand < 0)
+            {
+                rand = 0;
+            }
+            console.log("This is rand test", rand);
             var uri = music.playlists.items[rand].uri;
-//            console.log(music.playlists.items[rand].uri);
-            
-            
             var ifrm = document.createElement('iframe');
-    
             var frameUrl = '//embed.spotify.com/?uri=' + uri;
             // assign url
             ifrm.setAttribute('src', frameUrl);
@@ -89,7 +85,7 @@ function ajaxCall(request, cb) {
             ifrm.setAttribute('class', 'card-shadow')
             // seems to generate get error
             document.getElementById("show-playlist").appendChild(ifrm);
-            console.log('hello');
+            //console.log('hello');
         });
         
     }
@@ -97,6 +93,3 @@ function ajaxCall(request, cb) {
 createPlaylist();
 //console.log(music);
 //var zipcode = document.getElementById("zipcode");
-//console.log('hello ' + document.getElementById('zipcode').value);
-//console.log(document);
-// get data:
