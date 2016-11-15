@@ -73,8 +73,6 @@ function ajaxCall(request, cb) {
             music = result;
             var rand = Math.floor((Math.random() * music.playlists.items.length) + 1);
 
-//            console.log(music);
-//            console.log(music.playlists.items.length);
             var uri = music.playlists.items[rand].uri;
 //            console.log(music.playlists.items[rand].uri);
             
