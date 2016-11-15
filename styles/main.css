@@ -50,11 +50,11 @@ body{
 }
 
 canvas{
-    background-color: #FFFFFF;
-    background: #FFFFFF;
+    background: #6b92b9;
     padding: 0px 0px 0px 0px;
     width: 100%;
-    
+    position: fixed;
+    z-index: -1;
 }
 
 #under-header{
