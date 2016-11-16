@@ -63,20 +63,10 @@ function ajaxCall(request, cb) {
         var musicUrl = '//api.spotify.com/v1/search?q="' + customUrl + '"&type=playlist';
         }
 //        console.log(musicUrl);
-
->>>>>>> 6c7f16316a8d238d05b158e717051ec0b77ed99d
         ajaxCall(musicUrl, function(result)
         {
 
             music = result;
-<<<<<<< HEAD
-            var rand = Math.floor((Math.random() * music.playlists.items.length) + 1);
-
-            var uri = music.playlists.items[rand].uri;
-//            console.log(music.playlists.items[rand].uri);
-            
-            
-=======
             rand = Math.floor((Math.random() * music.playlists.items.length - 1) + 0);
             if(rand < 0)
             {
@@ -84,7 +74,6 @@ function ajaxCall(request, cb) {
             }
             console.log("This is rand test", rand);
             var uri = music.playlists.items[rand].uri;
->>>>>>> 6c7f16316a8d238d05b158e717051ec0b77ed99d
             var ifrm = document.createElement('iframe');
             var frameUrl = '//embed.spotify.com/?uri=' + uri;
             // assign url
