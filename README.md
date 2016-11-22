@@ -6,3 +6,4 @@
 - Cards, buttons, and headers are all created using a CSS framework called Frow.
 - The snow on the home page is meant to throw the user into a Christmas/holiday mood.
 - The home page is subject to change depending on what the season feels like.
+- Plans to add a firebase supported chat for those that are "Bored"
