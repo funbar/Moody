@@ -9,6 +9,9 @@ var sick = [ "ill", "fever", "relaxing%20in%20bed" ];
 var sad = [ "Donald%20Trump" ];
 
 var rand;
+var Happy, Accomplished, Lazy, Okay, Meh, Tired, Annoyed, Sick, Sad;
+Happy = Accomplished = Lazy = Okay = Meh = Tired = Annoyed = Sick = Sad = 0;
+
 function moodChosen(mood) {
   /*  
     switch (mood)
@@ -25,7 +28,10 @@ function moodChosen(mood) {
     {
         rand = Math.floor((Math.random() * (happy.length - 1)) + 0);
         //console.log("This is rand", rand);
+        
         mood = happy[rand];
+        Happy++;
+        console.log("This is happy's count" + Happy);
     }    
     if(mood == "accomplished")
     {    
