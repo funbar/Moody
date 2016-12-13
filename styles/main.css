@@ -2,6 +2,10 @@
     display: none;
 }
 
+p{
+    color: white;
+}
+
 body{
     font-family: Roboto;
     /*background-color: #F0F0F0;*/
@@ -66,10 +70,27 @@ canvas{
     margin-bottom: 26.5px;
     background-color: #FFF;
     width: 100%;
+    height: 100%;
+    
+}
+
+.background-image{
+    background-image: url('../img/music-listen.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 45.64%;    
+    
+    /*height: auto; */
+    /*width: auto; */
+    /*max-width: 1000px; */
+    /*max-height: 1000px;*/
 }
 
 .page-title{
     font-size: 30px;
-    font-weight: 900;
-    color: steelblue;
+    font-weight: 400;
+    color: white;
+    /*steelblue*/
 }
