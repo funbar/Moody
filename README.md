@@ -8,3 +8,4 @@
 - The home page is subject to change depending on what the season feels like.
 - Plans to add a firebase supported chat for those that are "Bored"
 - Create a local cache that will keep track of clicks and improve the AI interaction.
+- Working on improving home page screen for UX
