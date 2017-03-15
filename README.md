@@ -9,3 +9,4 @@
 - Plans to add a firebase supported chat for those that are "Bored"
 - Create a local cache that will keep track of clicks and improve the AI interaction.
 - Working on improving home page screen for UX
+- Working on improving UI
