@@ -44,7 +44,6 @@ function ajaxCall(request, cb) {
     xmlhttp.send();
 //return result;
 }
-//http://api.wunderground.com/api/06374893a86b9e3f/geolookup/q/94107.json
 
 // function grabMusic(){
     //var userZipcode = document.getElementById('zipcode').value;
@@ -91,5 +90,3 @@ function ajaxCall(request, cb) {
     }
  
 createPlaylist();
-//console.log(music);
-//var zipcode = document.getElementById("zipcode");
