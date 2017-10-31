@@ -1,85 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-        <title> </title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,700" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.rawgit.com/Beg-in/frow/1.4.6/css/frow.min.css">
-
-        <link rel="stylesheet" href="./styles/main.css">
-        <link rel="stylesheet" href="./styles/weather.css">        
-        
-    </head>
-    <body>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <title> </title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,700" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/Beg-in/frow/1.4.6/css/frow.min.css">
+      <link rel="stylesheet" href="./styles/main.css">
+      <link rel="stylesheet" href="./styles/weather.css">
+   </head>
+   <body>
       <div id="header" class="card-shadow">
-            <div class="frow-container height-100">
-                <div class="frow justify-between centered">
-                    <a href="./index.html" class="header-logo">
-                        Moody
-                    </a>
-                    <div>
-                        <a href="aboutme.html">
-                            About Me
-                        </a>
-                        <a href="weather.html">
-                            Weather
-                        </a>
-                        <a href="music.html">
-                            Music
-                        </a>
-                    </div>
-                </div>
+         <div class="frow-container height-100">
+            <div class="frow justify-between centered">
+               <a href="./index.html" class="header-logo">
+               Moody
+               </a>
+               <div>
+                  <a href="aboutme.html">
+                  About Me
+                  </a>
+                  <a href="weather.html">
+                  Weather
+                  </a>
+                  <a href="music.html">
+                  Music
+                  </a>
+               </div>
             </div>
-        </div>
-        <div id="under-header">
-            <div class="frow-container">
-                <div class="frow">
-                        <div class="page card-shadow">
-                            <div class="frow column-start">
-                              <label>Zipcode</label>
-                              <input type="text" name="zipcode" id="zipcode" placeholder="60194"/>
-                              <button onclick="grabZip()">Submit</button>
-                            </div>
-                        </div>
-                </div>
-                
-                
-                <div id="weather-choices" class="hidden">
-                    <div class="frow gutters">
-                        <div class="col-md-1-2">
-                            <div class="weather-choice card-shadow">
-                                <div class="frow centered-column">  
-                                    <span><span id="apiTemp"> 
-                                     </span>&deg;F</span> 
-                                     Temperature
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="col-md-1-2">
-                            <div class="weather-choice card-shadow">
-                                <div class="frow centered-column">
-                                    <span id="apiCond">
-                                    </span>
-                                    Conditions
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="frow">
-                            
-                            <button class="next-page" onclick="zipSubmitted()">
-                                Let's get some Music!
-                            </button>
-                            
-                        </div>
-                    </div>
-                </div>
-                
+         </div>
+      </div>
+      <div id="under-header">
+         <div class="frow-container">
+            <div class="frow">
+               <div class="page card-shadow">
+                  <div class="frow column-start">
+                     <label>Zipcode</label>
+                     <input type="text" name="zipcode" id="zipcode" placeholder="60194"/>
+                     <button onclick="grabZip()">Submit</button>
+                  </div>
+               </div>
             </div>
-        </div>
-        
-    </body>
-    <script src="./scripts/weather.js"></script>   
+            <div id="weather-choices" class="hidden">
+               <div class="frow gutters">
+                  <div class="col-md-1-2">
+                     <div class="weather-choice card-shadow">
+                        <div class="frow centered-column">  
+                           <span><span id="apiTemp"> 
+                           </span>&deg;F</span> 
+                           Temperature
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-1-2">
+                     <div class="weather-choice card-shadow">
+                        <div class="frow centered-column">
+                           <span id="apiCond">
+                           </span>
+                           Conditions
+                        </div>
+                     </div>
+                  </div>
+                  <div class="frow">
+                     <button class="next-page" onclick="zipSubmitted()">
+                     Let's get some Music!
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script src="./scripts/weather.js"></script>   
 </html>
