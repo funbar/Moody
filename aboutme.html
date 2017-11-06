@@ -1,69 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-        <title> </title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,700" rel="stylesheet">
-       
-        <link rel="stylesheet" href="https://cdn.rawgit.com/Beg-in/frow/1.4.6/css/frow.min.css">
-
-        <link rel="stylesheet" href="./styles/main.css">
-        <link rel="stylesheet" href="./styles/aboutme.css">
-        
-        
-    </head>
-    <body>
-        <div id="header" class="card-shadow">
-            <div class="frow-container height-100">
-                <div class="frow justify-between centered">
-                    
-                    <a href="./index.html" class="header-logo">
-                        Moody
-                    </a>
-                    <div>
-                        <a href="aboutme.html">
-                            About Me
-                        </a>
-                        <a href="weather.html">
-                            Weather
-                        </a>
-                        <a href="music.html">
-                            Music
-                        </a>
-                        
-                    </div>
-                </div>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <title> </title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,700" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.rawgit.com/Beg-in/frow/1.4.6/css/frow.min.css">
+      <link rel="stylesheet" href="./styles/main.css">
+      <link rel="stylesheet" href="./styles/aboutme.css">
+   </head>
+   <body>
+      <div id="header" class="card-shadow">
+         <div class="frow-container height-100">
+            <div class="frow justify-between centered">
+               <a href="./index.html" class="header-logo">
+               Moody
+               </a>
+               <div>
+                  <a href="aboutme.html">
+                  About Me
+                  </a>
+                  <a href="weather.html">
+                  Weather
+                  </a>
+                  <a href="music.html">
+                  Music
+                  </a>
+               </div>
             </div>
-        </div>
-        
-        <div id="under-header">
-            <div class="frow-container">
-                <div class="frow">
-                    <div class="col-sm-1-1">
-                        <div class="section-title">
-                            Data and Framework(s)  
-                        </div>
-                        <div class="page card-shadow">
-                            The data sources that I used were from Weather Underground's API and Spotify's API. Wunderground's API 
-                            allowed me to inject a zipcode and grab all the information for that zipcode. However, it did not list the weather,
-                            but rather, listed a list of towns within the area. So, I had to make a second query call to the api by creating a 
-                            separate link that needed the country and the city name in order to grab the weather. With this, I was able to grab 
-                            the temperature and condition fields within the second API call. As for the Spotify API, at first, it only returned
-                            information for the users and their playlists, but it never was able to directly print out any kind of playlist. 
-                            I simply took a Spotify widget and created a "src" for that iframe and injected the newly created API link that was 
-                            generated after a search query for playlists. As for the <strong>Framework</strong>, I refrained from using anything
-                            crazy such as Bootstrap, or jQuery because I wanted to build the app up from the ground myself. I could've easily used
-                            Angular or Meteor (I have experience with both of these) but wanted to do something more with the css. I used a framework
-                            called 'Frow' and it allowed me to style the flex boxes with ease and allows grids to be created easier. I knew it would
-                            be good for this project because boxes are normally a great way to display data. I also wanted to use this CSS framework
-                            because it was something that I never used before.
-                        </div>
-                    </div>
-                </div>
+         </div>
+      </div>
+      <div id="under-header">
+         <div class="frow-container">
+            <div class="frow">
+               <div class="col-sm-1-1">
+                  <div class="section-title">
+                     Data and Framework(s)  
+                  </div>
+                  <div class="page card-shadow">
+                     The data sources that I used were from Weather Underground's API and Spotify's API. Wunderground's API 
+                     allowed me to inject a zipcode and grab all the information for that zipcode. However, it did not list the weather,
+                     but rather, listed a list of towns within the area. So, I had to make a second query call to the api by creating a 
+                     separate link that needed the country and the city name in order to grab the weather. With this, I was able to grab 
+                     the temperature and condition fields within the second API call. As for the Spotify API, at first, it only returned
+                     information for the users and their playlists, but it never was able to directly print out any kind of playlist. 
+                     I simply took a Spotify widget and created a "src" for that iframe and injected the newly created API link that was 
+                     generated after a search query for playlists. As for the <strong>Framework</strong>, I refrained from using anything
+                     crazy such as Bootstrap, or jQuery because I wanted to build the app up from the ground myself. I could've easily used
+                     Angular or Meteor (I have experience with both of these) but wanted to do something more with the css. I used a framework
+                     called 'Frow' and it allowed me to style the flex boxes with ease and allows grids to be created easier. I knew it would
+                     be good for this project because boxes are normally a great way to display data. I also wanted to use this CSS framework
+                     because it was something that I never used before.
+                  </div>
+               </div>
             </div>
-        </div>
-    </body>
+         </div>
+      </div>
+   </body>
 </html>
