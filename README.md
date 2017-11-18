@@ -1,4 +1,5 @@
 ### Moody
+##### Currently restructuring due to a change in Spotify's API
 ##### Features
 - Some features of Moody will include unique user experience based on what mood they choose:
 - The weather will also play a role in how their experience is affected.
